@@ -55,7 +55,7 @@ class PostController extends Controller
         $post = Post::create($validated);
 
         // Redirect the user to the created post woth a success notification
-        return redirect(route('posts.show', [$post->slug]))->with('notification', 'Post created!');
+        return redirect(route('posts.show', $post))->with('notification', 'Post created!');
     }
 
     /**
@@ -104,7 +104,7 @@ class PostController extends Controller
         $post->update($validated);
 
         // Redirect the user to the created post woth an updated notification
-        return redirect(route('posts.show', [$post->slug]))->with('notification', 'Post updated!');
+        return redirect(route('posts.show', $post))->with('notification', 'Post updated!');
     }
 
     /**

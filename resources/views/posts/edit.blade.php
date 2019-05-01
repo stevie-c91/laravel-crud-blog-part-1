@@ -6,7 +6,7 @@
 
 <h1 class="title">Edit: {{ $post->title }}</h1>
 
-<form method="post" action="{{ route('posts.update', [$post->slug]) }}">
+<form method="post" action="{{ route('posts.update', $post) }}">
 
     @csrf
     @method('patch')
